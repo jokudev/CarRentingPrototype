@@ -1,5 +1,5 @@
 <div *ngIf="this.userData(); else noUser">
-  <div class="dropdown" (click)="toggleDropdown()" (blur)="isDropdownOpen = false" [class.show]="isDropdownOpen" tabindex="0">
+  <div class="dropdown" (click)="toggleDropdown()" (blur)="closeDropdown()" [class.show]="isDropdownOpen" tabindex="0">
     <img
       src="{{ this.userData()?.user_metadata?.['avatar_url'] }}"
       alt="avatar"
@@ -15,5 +15,5 @@
   </div>
 </div>
 <ng-template #noUser>
-  <span>{{ "" }}</span>
+  <button (click)="signIn()" class="btn btn-primary">Sign In</button>
 </ng-template>

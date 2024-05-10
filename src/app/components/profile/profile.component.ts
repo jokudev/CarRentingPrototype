@@ -25,6 +25,17 @@ export class ProfileComponent {
 
   toggleDropdown(): void {
     this.isDropdownOpen = !this.isDropdownOpen;
+    console.log(this.userData());
+  }
+
+  closeDropdown(): void {
+    setTimeout(() => {
+      this.isDropdownOpen = false;
+    }, 500); // delay of 500ms
+  }
+
+  async signIn() {
+    await this.auth.signInWithGithub();
   }
 
   async signOut() {
