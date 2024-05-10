@@ -1,5 +1,5 @@
 <div *ngIf="this.userData(); else noUser">
-  <div class="dropdown" (click)="toggleDropdown()" [class.show]="isDropdownOpen">
+  <div class="dropdown" (click)="toggleDropdown()" (blur)="isDropdownOpen = false" [class.show]="isDropdownOpen" tabindex="0">
     <img
       src="{{ this.userData()?.user_metadata?.['avatar_url'] }}"
       alt="avatar"
