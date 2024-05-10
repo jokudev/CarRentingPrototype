@@ -1,0 +1,40 @@
+nav {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.navbar-nav li {
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar-nav li a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-nav .active {
+  background-color: #858585;
+}
+
+.navbar-nav li.active a {
+  color: white;
+}
+
+.navbar-nav li:hover {
+  background-color: #ddd;
+}
+
+.navbar-nav li:hover a {
+  color: black;
+}
+
+
