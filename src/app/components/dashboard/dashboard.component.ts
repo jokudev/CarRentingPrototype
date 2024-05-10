@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,5 +10,12 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+  constructor(private auth: AuthService, private router: Router) {
+    this.auth.currentUser.subscribe((user) => {
+      if (!user) {
+        this.router.navigate(['/signin']);
+      }
+    });
+  }
 
 }
