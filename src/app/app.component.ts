@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { ProfileComponent } from "./components/profile/profile.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 
 @Component({
@@ -9,7 +8,7 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    imports: [CommonModule, RouterOutlet, ProfileComponent, NavbarComponent]
+    imports: [CommonModule, RouterOutlet, NavbarComponent]
 })
 export class AppComponent {
   title = 'Car Rental App (Prototype)';

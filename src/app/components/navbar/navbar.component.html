@@ -13,6 +13,25 @@
       </li>
     </ul>
 
-    <app-profile></app-profile>
+    <div *ngIf="this.profile(); else noUser">
+      <div class="dropdown" (click)="toggleDropdown()" (blur)="closeDropdown()" [class.show]="isDropdownOpen" tabindex="0">
+        <img
+          src="{{ this.profile()?.['avatar_url'] }}"
+          alt="avatar"
+          class="rounded-circle"
+          width="40"
+          height="40">
+        <span class="dropdown-toggle text-black my-2" role="button" aria-expanded="isDropdownOpen">
+          {{ this.profile()?.['full_name'] }}
+        </span>
+        <div class="dropdown-menu" *ngIf="isDropdownOpen">
+          <button (click)="signOut()" class="dropdown-item">Logout</button>
+        </div>
+      </div>
+    </div>
+    <ng-template #noUser>
+      <button (click)="signIn()" class="btn btn-primary">Sign In</button>
+    </ng-template>
+
   </div>
 </nav>
