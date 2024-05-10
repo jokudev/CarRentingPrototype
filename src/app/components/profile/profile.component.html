@@ -1,0 +1,19 @@
+<div *ngIf="this.userData(); else noUser">
+  <div class="dropdown" (click)="toggleDropdown()" [class.show]="isDropdownOpen">
+    <img
+      src="{{ this.userData()?.user_metadata?.['avatar_url'] }}"
+      alt="avatar"
+      class="rounded-circle"
+      width="40"
+      height="40">
+    <span class="dropdown-toggle text-black my-2" role="button" aria-expanded="isDropdownOpen">
+      {{ this.userData()?.user_metadata?.['full_name'] }}
+    </span>
+    <div class="dropdown-menu" *ngIf="isDropdownOpen">
+      <button (click)="signOut()" class="dropdown-item">Logout</button>
+    </div>
+  </div>
+</div>
+<ng-template #noUser>
+  <span>{{ "" }}</span>
+</ng-template>
